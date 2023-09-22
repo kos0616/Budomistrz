@@ -7,13 +7,16 @@ const date = new Date().toLocaleTimeString();
 
 const isProduction = process.env.NODE_ENV === 'production';
 const BASE_URL = isProduction ? '/Budomistrz/' : '/';
+const BRAND_NAME = 'Budomistrz';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: false,
+  // ssr: false,
   runtimeConfig: {
     public: {
       clientVersion: pkg.version,
-      BASE_URL
+      BASE_URL,
+      BRAND_NAME
     }
   },
   nitro: {

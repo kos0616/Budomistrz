@@ -1,12 +1,21 @@
-@import './base.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-primary: #795548;
+  }
+
   html {
-    font-size: 18px;
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-100 text-zinc-800 transition-colors dark:bg-neutral-900 dark:text-zinc-400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   p {
@@ -38,22 +47,4 @@
   box-shadow:
     inset 0 10px 12px -10px rgba(0, 0, 0, 0.6),
     inset 0 -10px 12px -10px rgba(0, 0, 0, 0.6);
-}
-
-.btn {
-  @apply rounded-md border border-white px-3 py-2 hover:bg-slate-800/75 focus:outline-none;
-  & ~ .btn {
-    @apply ml-2;
-  }
-  &.btn-primary {
-    @apply border-transparent bg-primary text-[color:var(--color-text-dark)] hover:bg-[color:var(--color-primary-dark-1)];
-  }
-}
-.lg\:btn-group {
-  @media screen and (min-width: 768px) {
-    @apply flex;
-    .btn {
-      @apply m-0 rounded-none border-r-0 last:rounded-r last:border-r first-of-type:rounded-l;
-    }
-  }
 }
