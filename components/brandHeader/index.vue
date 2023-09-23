@@ -9,7 +9,10 @@
           <strong class="text-lg">{{ BRAND }}</strong>
         </h1>
       </a>
-      <nav class="flex content-center">
+      <div class="md:hidden">
+        <SwitchDarkMode></SwitchDarkMode>
+      </div>
+      <nav class="hidden content-center md:flex">
         <div class="home-nav-link">
           <SwitchDarkMode></SwitchDarkMode>
         </div>
