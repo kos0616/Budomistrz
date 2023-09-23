@@ -1,6 +1,6 @@
 <template>
   <header
-    class="sticky top-0 z-20 border-b border-zinc-300 bg-zinc-100 pt-2 shadow-sm transition-colors dark:border-zinc-600 dark:bg-zinc-800"
+    class="sticky top-0 z-20 border-b border-zinc-300 bg-zinc-100 pt-2 shadow-sm dark:border-zinc-600 dark:bg-zinc-800"
   >
     <div class="container mx-auto flex">
       <a :href="url" class="mr-auto block">
