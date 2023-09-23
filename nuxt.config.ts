@@ -39,7 +39,11 @@ export default defineNuxtConfig({
     baseURL: BASE_URL,
     // buildAssetsDir: 'assets', // 這邊會影響到預設的 assets資料夾
     head: {
-      htmlAttrs: { lang: 'en', 'data-version': pkg.version, 'data-time': date },
+      htmlAttrs: {
+        lang: 'en',
+        'data-version': pkg.version,
+        'data-time': date
+      },
       title: 'Budomistrz',
       meta: [
         { name: 'description', content: 'Budomistrz a starter sample' },
@@ -47,6 +51,7 @@ export default defineNuxtConfig({
         // windows home screen app top bar color
         { name: 'msapplication-TileColor', content: '#27272a' }
       ],
+      script: [{ src: BASE_URL + 'theme.js' }],
       link: [
         { rel: 'apple-touch-icon', sizes: '180x180', href: BASE_URL + 'apple-touch-icon.png' },
         { rel: 'apple-touch-startup-image', href: BASE_URL + 'favicon.svg' },
