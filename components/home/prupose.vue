@@ -1,9 +1,9 @@
 <template>
   <div class="container mx-auto py-20">
     <div class="md:flex">
-      <article class="max-w-lg shrink-0 bg-zinc-200 px-14 py-20 xl:max-w-2xl">
-        <h2 class="mb-5">Building with Purpose: Making a Difference Together</h2>
-        <header class="mb-5">
+      <article class="max-w-lg shrink-0 bg-zinc-200 px-14 py-20 dark:bg-stone-800 xl:max-w-2xl">
+        <h2 class="mb-3">Building with Purpose: Making a Difference Together</h2>
+        <header class="description mb-10">
           Our buildings are more than just the fusion of roofs and walls. They are a commitment, a
           mission, and a contribution to human society.
         </header>

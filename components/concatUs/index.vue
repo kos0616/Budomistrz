@@ -1,15 +1,15 @@
 <template>
   <div class="relative">
     <article
-      class="absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-center bg-zinc-100/75 p-10 backdrop-blur-sm dark:bg-zinc-800/75 sm:right-auto"
+      class="absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-center bg-zinc-300/75 p-10 backdrop-blur-sm dark:bg-zinc-800/75 sm:right-auto"
     >
       <h2>Our Global Locations</h2>
-      <header>Always Welcome to Visit</header>
+      <p class="description mb-10">Always Welcome to Visit</p>
 
       <a
         href="https://www.google.com/maps"
         target="_blank"
-        class="mt-10 text-primary-400 underline-offset-1 hover:underline dark:text-white"
+        class="text-primary-400 underline-offset-1 hover:underline dark:text-white"
       >
         <svg
           class="me-1 inline fill-current"
@@ -29,6 +29,7 @@
     <img
       src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1150&q=80"
       alt="global"
+      class="ml-auto"
     />
   </div>
 </template>

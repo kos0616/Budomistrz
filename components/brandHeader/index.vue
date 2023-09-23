@@ -4,10 +4,16 @@
   >
     <div class="container mx-auto flex">
       <a :href="url" class="mr-auto block">
-        <h1 class="flex items-baseline gap-2">
-          <img src="@/assets/image/brand.svg" alt="LOGO" height="25px" class="inline-block h-6" />
-          <strong class="text-lg">{{ BRAND }}</strong>
-        </h1>
+        <strong itemscope itemtype="https://schema.org/Brand" class="flex items-baseline gap-2">
+          <img
+            itemprop="logo"
+            src="@/assets/image/brand.svg"
+            alt="LOGO"
+            height="25px"
+            class="inline-block h-6"
+          />
+          <span itemprop="name" class="text-lg">{{ BRAND }}</span>
+        </strong>
       </a>
       <div class="md:hidden">
         <SwitchDarkMode></SwitchDarkMode>
