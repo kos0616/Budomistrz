@@ -8,4 +8,4 @@ todo
 
 1. nuxt content
 2. inner pages
-3. add more seo
+3. add more seo setting

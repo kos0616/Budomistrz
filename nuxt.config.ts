@@ -50,8 +50,8 @@ export default defineNuxtConfig({
         { name: 'creator', content: 'kos0616' },
         // windows home screen app top bar color
         { name: 'msapplication-TileColor', content: '#27272a' },
-        { name: 'theme-color', media = '(prefers-color-scheme: light)', content: '#F4F4F5' },
-        { name: 'theme-color', media = '(prefers-color-scheme: dark)', content: '#27272A' }
+        { name: 'theme-color', media: '(prefers-color-scheme: light)', content: '#F4F4F5' },
+        { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#27272A' }
       ],
       script: [{ src: BASE_URL + 'theme.js' }],
       link: [
