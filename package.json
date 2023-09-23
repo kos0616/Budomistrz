@@ -25,6 +25,8 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",
-    "pinia": "^2.1.6"
+    "pinia": "^2.1.6",
+    "swiper": "^8.4.7",
+    "vue-awesome-swiper": "^5.0.1"
   }
 }
