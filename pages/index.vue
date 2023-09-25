@@ -3,7 +3,7 @@
     <HomeBrand></HomeBrand>
     <div class="py-20">
       <article class="container mx-auto">
-        <h2>With 20 Locations Worldwide, Over 1,000 Successful Projects</h2>
+        <h2 class="mb-10">With 20 Locations Worldwide, Over 1,000 Successful Projects</h2>
       </article>
       <carousel></carousel>
     </div>

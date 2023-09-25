@@ -47,7 +47,16 @@ export default defineNuxtConfig({
       title: 'Budomistrz',
       meta: [
         { name: 'description', content: 'Budomistrz a starter sample' },
-        { name: 'creator', content: 'kos0616' },
+        { name: 'author', content: 'kos0616' },
+        { name: 'copyright', content: 'Budomistrz' },
+        { name: 'og:title', content: 'Budomistrz' },
+        {
+          name: 'og:description',
+          content: 'Eco-Friendly Design, Sustainable Construction, Making Dreams Come True'
+        },
+        /** 待測試 社群分享的連結如果是FB會怎樣 */
+        { name: 'og:url', content: '' },
+        { name: 'og:image', content: BASE_URL + 'favicon.svg' },
         // windows home screen app top bar color
         { name: 'msapplication-TileColor', content: '#27272a' },
         { name: 'theme-color', media: '(prefers-color-scheme: light)', content: '#F4F4F5' },

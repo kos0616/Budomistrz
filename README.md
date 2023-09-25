@@ -7,5 +7,7 @@ demo site of a construction company
 todo
 
 1. nuxt content
-2. inner pages
-3. add more seo setting
+2. inner pages, like projects
+3. add more seo setting (home and article)
+4. light house pwa setting
+5. JSON-LD
