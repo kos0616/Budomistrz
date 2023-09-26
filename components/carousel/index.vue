@@ -1,6 +1,6 @@
 <template>
   <swiper
-    :slides-per-view="width > 1400 ? 4 : 3"
+    :slides-per-view="perView"
     :space-between="20"
     :auto-height="false"
     :loop="true"
@@ -27,7 +27,16 @@
 </template>
 
 <script lang="ts" setup>
-const width = process.client ? window.screen.width : 1980;
+const perView = ref(4);
+const initPerView = () => {
+  if (window.screen.width < 1400) perView.value = 3;
+};
+
+onMounted(() => {
+  initPerView();
+});
+
+// const width = process.client ? window.screen.width : 1980;
 
 const links = [
   {

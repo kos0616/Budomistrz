@@ -35,6 +35,7 @@ export default defineNuxtConfig({
   // pwa: {
   //   manifest: false
   // },`
+  plugins: [{ src: '~/plugins/vue-swiper', ssr: false }],
   app: {
     baseURL: BASE_URL,
     // buildAssetsDir: 'assets', // 這邊會影響到預設的 assets資料夾
