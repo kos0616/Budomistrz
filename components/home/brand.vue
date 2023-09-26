@@ -22,7 +22,7 @@
             to="projects"
             title="VIEW PROJECTS"
             class="group bg-primary-400 p-2 px-4 text-white"
-            itemprop="review"
+            itemprop="url"
           >
             VIEW PROJECTS
             <svg
