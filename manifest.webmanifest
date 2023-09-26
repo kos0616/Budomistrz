@@ -10,7 +10,7 @@
       "purpose": "maskable"
     },
     {
-      "src": "./android-chrome-192x192",
+      "src": "./android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
@@ -33,7 +33,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#333",
   "theme_color": "#27272a",
