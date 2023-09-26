@@ -28,8 +28,9 @@
       </article>
       <div class="hidden md:block">
         <img
-          src="https://images.unsplash.com/photo-1568475745587-a98f9ec71cf4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1335&q=80"
+          src="https://images.unsplash.com/photo-1616512659455-111d3367649f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
           alt="school building"
+          class="h-full object-cover"
         />
       </div>
     </div>

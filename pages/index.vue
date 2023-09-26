@@ -11,7 +11,7 @@
     <HomePrupose></HomePrupose>
     <HomeAdvtange class="py-20"></HomeAdvtange>
     <HomeUserExperts class="py-24"></HomeUserExperts>
-    <ConcatUs></ConcatUs>
+    <ConcatUs class="py-20"></ConcatUs>
   </div>
 </template>
 

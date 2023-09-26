@@ -1,6 +1,6 @@
 <template>
   <swiper
-    :slides-per-view="3"
+    :slides-per-view="width > 1400 ? 4 : 3"
     :space-between="20"
     :auto-height="false"
     :loop="true"
@@ -24,25 +24,11 @@
       </NuxtLink>
     </swiper-slide>
   </swiper>
-  <!-- <Swiper
-    :modules="[SwiperAutoplay, SwiperEffectCreative]"
-    :slides-per-view="1"
-    :loop="true"
-    :autoplay="{
-      delay: 3000,
-      disableOnInteraction: true
-    }"
-  >
-    <SwiperSlide v-for="(slide, i) in 5" :key="`slide${i}`">
-      <div class="bg-slate-200 py-3 text-center">{{ slide }}</div>
-      <NuxtLink :to="slide.to">
-        <img :src="slide.href" :alt="slide.title" class="aspect-square object-cover" />
-      </NuxtLink>
-    </SwiperSlide>
-  </Swiper> -->
 </template>
 
 <script lang="ts" setup>
+const width = process.client ? window.screen.width : 1980;
+
 const links = [
   {
     to: '/project/1',

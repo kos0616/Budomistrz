@@ -1,5 +1,5 @@
 <template>
-  <div class="relative dark:bg-stone-800">
+  <div class="container relative mx-auto dark:bg-stone-800">
     <img
       src="https://plus.unsplash.com/premium_photo-1661883964999-c1bcb57a7357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1128&q=80"
       alt="building"
