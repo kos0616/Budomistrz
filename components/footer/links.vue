@@ -5,7 +5,7 @@
         <h2>Social</h2>
         <ul>
           <li>
-            <a href="#">
+            <a href="http://instagram.com/Budomistrz">
               <svg
                 class="inline-block fill-current"
                 xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="http://twitter.com/Budomistrz">
               <svg
                 class="inline-block fill-current"
                 xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="http://www.linkedin.com/in/Budomistrz">
               <svg
                 class="inline-block fill-current"
                 xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@
         <h2>News</h2>
         <ul>
           <li>
-            <a href="">
+            <a href="http://www.facebook.com/Budomistrz">
               <svg
                 class="inline-block w-6 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="http://youtube.com/Budomistrz">
               <svg
                 class="inline-block w-6 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +90,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="http://plus.google.com/Budomistrz">
               <svg
                 class="inline-block w-6 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +111,7 @@
         <h2>Contact</h2>
         <ul>
           <li>
-            <a href="">
+            <a href="mailto:hello@Budomistrz.com">
               <svg
                 class="inline-block w-6 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +127,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="tel:+886-912345678">
               <svg
                 class="inline-block w-6 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +143,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="https://maps.app.goo.gl">
               <svg
                 class="inline-block w-6 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
