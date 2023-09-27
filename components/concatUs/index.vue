@@ -5,7 +5,7 @@
         class="flex grow flex-col justify-center bg-zinc-300/75 p-10 backdrop-blur-sm dark:bg-zinc-800/75"
       >
         <h2>Our Global Locations</h2>
-        <p class="description mb-10">Always Welcome to Visit</p>
+        <p class="description mb-5">Always Welcome to Visit</p>
 
         <a
           href="https://www.google.com/maps"

@@ -10,7 +10,7 @@
     >
       <article itemscope itemtype="https://schema.org/Brand" class="sticky top-0">
         <h1 itemprop="slogan">Budomistrz: The Art of Nordic Architecture</h1>
-        <p class="description mb-10" itemprop="description">
+        <p class="description mb-5" itemprop="description">
           Eco-Friendly Design, Sustainable Construction, Making Dreams Come True
         </p>
         <p class="mb-8" itemprop="disambiguatingDescription">
