@@ -8,6 +8,7 @@
   </div>
 </template>
 
+<!-- now disabled -->
 <script lang="ts" setup>
 definePageMeta({ layout: false });
 </script>
