@@ -11,7 +11,6 @@
     "http://www.linkedin.com/in/Budomistrz",
     "http://plus.google.com/Budomistrz"
   ],
-  "priceRange": "$$$$",
   "image": "https://kos0616.github.io/Budomistrz/_nuxt/brand.bd67d89e.svg",
   "description": "Eco-Friendly Design, Sustainable Construction, Making Dreams Come True",
   "address": {
@@ -22,11 +21,5 @@
     "postalCode": "01234",
     "addressCountry": "Norway"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "59.9139",
-    "longitude": "10.7522"
-  },
-  "openingHours": "Mo 09:00-18:00 Tu 09:00-18:00 We 09:00-18:00 Th 09:00-18:00 Fr 09:00-18:00 Sa 09:00-18:00 Su 09:00-18:00",
   "telephone": "+886912345678"
 }
