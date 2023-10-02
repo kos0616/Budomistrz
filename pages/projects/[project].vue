@@ -11,7 +11,7 @@
         {{ info?.title }}
       </h1>
       <p v-skeleton-item itemprop="description" class="mb-16 max-w-md">{{ info?.description }}</p>
-      <p itemprop="creator">Builder: Budomistrz</p>
+      <p>Builder: <span itemprop="creator">Budomistrz</span></p>
       <figure class="grid grid-cols-2 gap-2">
         <div v-skeleton-item v-for="(img, i) in info?.imgs" :key="`img${i}`" class="aspect-square">
           <img :src="img" itemprop="image" class="h-full w-full object-cover" />
