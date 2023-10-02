@@ -35,9 +35,6 @@ const info = ref<typeInfo>({ description: ' ' } as any);
 const loading = ref(false);
 
 const setSeo = () => {
-  const config = useRuntimeConfig();
-  const BASE_URL = config.public.BASE_URL;
-
   useJsonld({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
