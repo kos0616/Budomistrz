@@ -1,14 +1,19 @@
 <template>
   <div class="bg-zinc-300/75 p-10 dark:bg-zinc-800/75">
     <Breadcrumb v-model="breadcrumbs" class="mb-3" />
-    <article v-skeleton="loading" class="container mx-auto">
-      <h1 v-skeleton-item class="mb-4">
+    <article
+      v-skeleton="loading"
+      itemtype="https://schema.org/CreativeWork"
+      class="container mx-auto"
+    >
+      <h1 v-skeleton-item itemprop="name" class="mb-4">
         {{ info?.title }}
       </h1>
-      <p v-skeleton-item class="mb-16 max-w-md">{{ info?.description }}</p>
+      <p v-skeleton-item itemprop="description" class="mb-16 max-w-md">{{ info?.description }}</p>
+      <p itemprop="creator">Builder: Budomistrz</p>
       <figure class="grid grid-cols-2 gap-2">
         <div v-skeleton-item v-for="(img, i) in info?.imgs" :key="`img${i}`" class="aspect-square">
-          <img :src="img" class="h-full w-full object-cover" />
+          <img :src="img" itemprop="image" class="h-full w-full object-cover" />
         </div>
       </figure>
     </article>
@@ -29,25 +34,35 @@ const info = ref<typeInfo>({ description: ' ' } as any);
 
 const loading = ref(true);
 
-const getArticle = async () => {
-  await nextTick();
-  const { data } = await useFetch(`https://jsonplaceholder.typicode.com/posts/${project}`);
+useJsonld({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'projects',
+      item: '/projects'
+    }
+  ]
+});
 
+const getArticle = async () => {
+  const { data } = await useFetch(`https://jsonplaceholder.typicode.com/posts/${project}`);
   const res = data.value as any;
   info.value.description = res?.body;
+  loading.value = false;
 };
 
 const getInfo = async () => {
-  const { data: res } = await useFetch('/api/projects/info', {
+  const res = await $fetch('/api/projects/info', {
     query: { id: project }
   });
-  if (res && res.value !== null && res.value) {
-    info.value = res.value;
+  if (res) {
+    info.value = res;
   }
 };
 
-onMounted(async () => {
-  await getInfo();
-  await getArticle();
-});
+await getInfo();
+await getArticle();
 </script>

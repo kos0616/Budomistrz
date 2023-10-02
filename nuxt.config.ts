@@ -29,13 +29,17 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     // '@vite-pwa/nuxt',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    'nuxt-jsonld'
   ],
   devtools: { enabled: true },
   // pwa: {
   //   manifest: false
   // },`
-  plugins: [{ src: '~/plugins/vue-swiper', ssr: false }],
+  plugins: [
+    { src: '~/plugins/vue-swiper', ssr: false },
+    { src: '~/plugins/skeleton', ssr: false }
+  ],
   app: {
     baseURL: BASE_URL,
     // buildAssetsDir: 'assets', // 這邊會影響到預設的 assets資料夾
