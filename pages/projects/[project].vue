@@ -38,8 +38,6 @@ const setSeo = () => {
   const config = useRuntimeConfig();
   const BASE_URL = config.public.BASE_URL;
 
-  const item = process.client ? window.location + BASE_URL + 'projects' : undefined;
-
   useJsonld({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -48,7 +46,7 @@ const setSeo = () => {
         '@type': 'ListItem',
         position: 1,
         name: 'projects',
-        item
+        item: 'https://kos0616.github.io/Budomistrz/projects'
       }
     ]
   });
