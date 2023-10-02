@@ -32,7 +32,7 @@ const breadcrumbs = ref([
 ]);
 const info = ref<typeInfo>({ description: ' ' } as any);
 
-const loading = ref(true);
+const loading = ref(false);
 
 useJsonld({
   '@context': 'https://schema.org',
@@ -47,22 +47,22 @@ useJsonld({
   ]
 });
 
-const getArticle = async () => {
-  const { data } = await useFetch(`https://jsonplaceholder.typicode.com/posts/${project}`);
-  const res = data.value as any;
-  info.value.description = res?.body;
-  loading.value = false;
-};
+// const getArticle = async () => {
+//   const { data } = await useFetch(`https://jsonplaceholder.typicode.com/posts/${project}`);
+//   const res = data.value as any;
+//   info.value.description = res?.body;
+//   loading.value = false;
+// };
 
 const getInfo = async () => {
-  const res = await $fetch('/api/projects/info', {
+  const { data: res } = await useFetch('/api/projects/info', {
     query: { id: project }
   });
   if (res) {
-    info.value = res;
+    info.value = res.value as any;
   }
 };
 
 await getInfo();
-await getArticle();
+// await getArticle();
 </script>
