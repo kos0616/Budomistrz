@@ -8,12 +8,12 @@
     <div
       class="right-10 max-w-xl bg-slate-100/75 p-10 backdrop-blur-sm dark:bg-stone-900/75 sm:absolute portrait:bottom-10 landscape:top-1/2"
     >
-      <article itemscope itemtype="https://schema.org/Brand" class="sticky top-0">
-        <h1 itemprop="slogan">Budomistrz: The Art of Nordic Architecture</h1>
-        <p class="description mb-5" itemprop="description">
+      <article class="sticky top-0">
+        <h1>Budomistrz: The Art of Nordic Architecture</h1>
+        <p class="description mb-5">
           Eco-Friendly Design, Sustainable Construction, Making Dreams Come True
         </p>
-        <p class="mb-8" itemprop="disambiguatingDescription">
+        <p class="mb-8">
           Budomistrz, rooted in Nordic spirit, blends eco-friendly, design, and sustainability,
           crafting unique architecture for you.
         </p>
@@ -22,7 +22,6 @@
             to="projects"
             title="VIEW PROJECTS"
             class="group bg-primary-400 p-2 px-4 text-white"
-            itemprop="url"
           >
             VIEW PROJECTS
             <svg

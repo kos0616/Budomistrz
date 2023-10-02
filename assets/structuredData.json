@@ -1,6 +1,6 @@
 {
   "@context": "http://www.schema.org",
-  "@type": "HomeAndConstructionBusiness",
+  "@type": "Organization",
   "name": "Budomistrz",
   "url": "https://kos0616.github.io/Budomistrz/",
   "logo": "https://kos0616.github.io/Budomistrz/_nuxt/brand.bd67d89e.svg",
