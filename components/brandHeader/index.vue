@@ -23,10 +23,7 @@
           <SwitchDarkMode></SwitchDarkMode>
         </div>
         <a :href="`${url}#home`" class="home-nav-link">Home</a>
-        <a :href="`${url}#start`" class="home-nav-link">Start</a>
-        <a :href="`${url}#about`" class="home-nav-link">About</a>
-        <a :href="`${url}#contact`" class="home-nav-link">Contact</a>
-        <NuxtLink class="home-nav-link" to="docs">docs</NuxtLink>
+        <NuxtLink class="home-nav-link" to="projects">Projects</NuxtLink>
       </nav>
     </div>
   </header>

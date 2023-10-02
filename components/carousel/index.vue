@@ -40,32 +40,32 @@ onMounted(() => {
 
 const links = [
   {
-    to: '/project/1',
+    to: '/projects/1',
     href: (await import('@/assets/image/aaron-huber-s95oB2n9jng-unsplash.jpg')).default,
     title: 'Project 1'
   },
   {
-    to: '/project/2',
+    to: '/projects/2',
     href: (await import('@/assets/image/andrea-davis-7Wg_9Dq17_U-unsplash.jpg')).default,
     title: 'Project 2'
   },
   {
-    to: '/project/3',
+    to: '/projects/3',
     href: (await import('@/assets/image/andrea-davis-DKiuGitdNyY-unsplash.jpg')).default,
     title: 'Project 3'
   },
   {
-    to: '/project/4',
+    to: '/projects/4',
     href: (await import('@/assets/image/bernard-hermant-CLKGGwIBTaY-unsplash.jpg')).default,
     title: 'Project 4'
   },
   {
-    to: '/project/5',
+    to: '/projects/5',
     href: (await import('@/assets/image/toa-heftiba-FV3GConVSss-unsplash.jpg')).default,
     title: 'Project 5'
   },
   {
-    to: '/project/6',
+    to: '/projects/6',
     href: (await import('@/assets/image/wiktor-karkocha-WA2uSCbTXkI-unsplash (1).jpg')).default,
     title: 'Project 6'
   }
