@@ -26,37 +26,5 @@
     "@type": "ContactPoint",
     "telephone": "+886912345678",
     "contactType": "Customer Service"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Monday",
-      "opens": "09:00",
-      "closes": "17:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Tuesday",
-      "opens": "09:00",
-      "closes": "17:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Wednesday",
-      "opens": "09:00",
-      "closes": "17:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Thursday",
-      "opens": "09:00",
-      "closes": "17:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Friday",
-      "opens": "09:00",
-      "closes": "17:00"
-    }
-  ]
+  }
 }
