@@ -3,6 +3,7 @@
     <Breadcrumb v-model="breadcrumbs" class="mb-3" />
     <article
       v-skeleton="loading"
+      itemscope
       itemtype="https://schema.org/CreativeWork"
       class="container mx-auto"
     >
