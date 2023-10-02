@@ -57,10 +57,10 @@
 <script lang="ts" setup>
 import { Breadcrumb } from '#components';
 
-const breadcrumbs = [
+const breadcrumbs = ref([
   { name: 'Home', value: '/' },
   { name: 'Projects', value: '/projects' }
-];
+]);
 
 const { data } = await useFetch('/api/projects/lists');
 const list = data.value?.list;

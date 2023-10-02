@@ -26,10 +26,10 @@ const route = useRoute();
 const { project } = route.params;
 import { typeInfo } from '~/server/api/projects/info';
 
-const breadcrumbs = [
+const breadcrumbs = ref([
   { name: 'Home', value: '/' },
   { name: 'Projects', value: '/projects' }
-];
+]);
 const info = ref<typeInfo>({ description: ' ' } as any);
 
 const loading = ref(true);
