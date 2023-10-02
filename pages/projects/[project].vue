@@ -34,18 +34,25 @@ const info = ref<typeInfo>({ description: ' ' } as any);
 
 const loading = ref(false);
 
-useJsonld({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'projects',
-      item: '/projects'
-    }
-  ]
-});
+const setSeo = () => {
+  const config = useRuntimeConfig();
+  const BASE_URL = config.public.BASE_URL;
+
+  const item = process.client ? window.location + BASE_URL + 'projects' : undefined;
+
+  useJsonld({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'projects',
+        item
+      }
+    ]
+  });
+};
 
 // const getArticle = async () => {
 //   const { data } = await useFetch(`https://jsonplaceholder.typicode.com/posts/${project}`);
@@ -64,5 +71,6 @@ const getInfo = async () => {
 };
 
 await getInfo();
+setSeo();
 // await getArticle();
 </script>
