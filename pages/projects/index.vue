@@ -20,9 +20,9 @@
       <article
         v-for="(p, i) in list"
         :key="`project${i}`"
-        class="mb-5 flex items-center gap-5 bg-zinc-300/75 pl-10 dark:bg-zinc-800/75 portrait:pr-5"
+        class="mb-5 flex flex-col items-center gap-5 bg-zinc-300/75 pl-10 dark:bg-zinc-800/75 md:flex-row portrait:pr-5 py-5 md:py-0"
       >
-        <div class="max-w-md shrink-0 py-16">
+        <div class="max-w-md shrink-0 md:py-16">
           <h2 class="mb-4">
             {{ p.title }}
           </h2>
@@ -44,6 +44,7 @@
             '--swiper-navigation-color': '#fff',
             '--swiper-pagination-color': '#fff'
           }"
+          class="w-full"
         >
           <swiper-slide v-for="(slide, i) in p.imgs" :key="`slide${i}`">
             <img :src="slide" width="500" height="500" class="aspect-square object-cover" />
