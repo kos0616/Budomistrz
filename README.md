@@ -6,6 +6,4 @@ demo site of a construction company
 
 todo
 
-1. bread
-2. add more seo setting (home and article)
-3. JSON-LD
+1. menu for mobile

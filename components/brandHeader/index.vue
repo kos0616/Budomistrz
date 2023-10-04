@@ -13,11 +13,10 @@
         <SwitchDarkMode></SwitchDarkMode>
       </div>
       <nav class="hidden content-center md:flex">
+        <NuxtLink class="home-nav-link" to="projects">Projects</NuxtLink>
         <div class="home-nav-link">
           <SwitchDarkMode></SwitchDarkMode>
         </div>
-        <a :href="`${url}#home`" class="home-nav-link">Home</a>
-        <NuxtLink class="home-nav-link" to="projects">Projects</NuxtLink>
       </nav>
     </div>
   </header>

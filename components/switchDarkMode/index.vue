@@ -1,5 +1,5 @@
 <template>
-  <label class="relative inline-flex cursor-pointer items-center">
+  <label class="relative inline-flex cursor-pointer items-center fill-current">
     <input
       v-model="theme"
       type="checkbox"
@@ -7,12 +7,12 @@
       :true-value="'light'"
       :false-value="'dark'"
     />
-    <div
+    <!-- <div
       class="peer-focus:ring-gary-300 peer me-2 h-6 w-11 rounded-full bg-gray-500 after:absolute after:left-[2px] after:top-0.5 after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-gray-400 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:ring-4 dark:border-gray-600 dark:bg-gray-600 dark:peer-focus:ring-gray-200/25"
-    ></div>
-    <iconSun v-if="theme === 'light'" class="fill-gray-600" />
-    <iconMoon v-else class="fill-gray-200"></iconMoon>
-    <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
+    ></div> -->
+    <iconSun v-if="theme === 'light'" />
+    <iconMoon v-else />
+    <span class="ml-1 font-medium capitalize">
       {{ theme }}
     </span>
   </label>
