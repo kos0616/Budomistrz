@@ -10,8 +10,8 @@
         </strong>
       </a>
 
-      <div class="absolute right-0 top-0 z-50 md:static">
-        <button @click="isOpen = !isOpen" class="relative h-8 w-8 focus:outline-none md:hidden">
+      <div class="fixed right-0 top-0 z-50 md:hidden">
+        <button @click="isOpen = !isOpen" class="relative h-8 w-8 focus:outline-none">
           <span class="sr-only">isOpen main menu</span>
           <div
             class="absolute left-1/2 top-1/2 block w-5 -translate-x-1/2 -translate-y-1/2 transform"
@@ -37,7 +37,7 @@
 
       <nav
         :class="isOpen ? 'translate-x-0' : 'translate-x-full'"
-        class="fixed bottom-0 right-0 top-0 flex w-full max-w-[150px] flex-col content-center gap-3 bg-zinc-200/95 pt-10 backdrop-blur-sm transition-all dark:bg-zinc-900/95 md:static md:w-auto md:translate-x-0 md:flex-row md:bg-transparent md:pt-0 dark:md:bg-transparent"
+        class="fixed bottom-0 right-0 top-0 z-10 flex w-full max-w-[150px] flex-col content-center gap-3 bg-zinc-200/95 pt-10 transition-all dark:bg-zinc-900/95 md:static md:w-auto md:translate-x-0 md:flex-row md:bg-transparent md:pt-0 dark:md:bg-transparent"
       >
         <NuxtLink @click="isOpen = false" class="home-nav-link px-3 md:hidden" to="/">
           Home
@@ -49,6 +49,13 @@
           <SwitchDarkMode></SwitchDarkMode>
         </div>
       </nav>
+      <Transition>
+        <div
+          @click="isOpen = false"
+          v-if="isOpen"
+          class="fixed inset-0 bg-zinc-900/50 backdrop-blur-sm"
+        />
+      </Transition>
     </div>
   </header>
 </template>
@@ -71,8 +78,8 @@ const isOpen = ref(false);
 .home-nav-link {
   @apply transition-colors md:mx-1 md:p-1;
 
-  &.mobile {
-    @apply px-3;
+  &:after {
+    @apply mt-2 block border-b border-primary-100 opacity-50 content-[''] dark:border-zinc-500 md:content-none;
   }
 
   &:hover {
@@ -81,5 +88,18 @@ const isOpen = ref(false);
   &.router-link-exact-active {
     @apply text-primary-200;
   }
+}
+</style>
+
+<style lang="scss" scoped>
+/* we will explain what these classes do next! */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
