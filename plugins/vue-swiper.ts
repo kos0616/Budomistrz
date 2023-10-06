@@ -1,3 +1,4 @@
+import { defineNuxtPlugin } from 'nuxt/app';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 /** import pagination if need */
 import SwiperClass, { Navigation } from 'swiper';

@@ -1,4 +1,5 @@
 // skeleton.ts
+import { defineNuxtPlugin } from 'nuxt/app';
 import { reactive, watchEffect, h, render, App } from 'vue';
 
 const state = reactive({
