@@ -147,10 +147,6 @@ const { data: photos } = await useFetch<photo[]>(`https://picsum.photos/v2/list?
 
 setSeo();
 
-useHead({
-  title: info.value.title
-});
-
 useSeoMeta({
   title: info.value.title,
   ogTitle: info.value.title,
