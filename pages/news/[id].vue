@@ -33,7 +33,7 @@
             :alt="`photo of ${author?.name}`"
             width="50"
             height="50"
-            class="rounded-full aspect-square object-cover"
+            class="aspect-square rounded-full object-cover"
           />
           <div>
             Author:
@@ -148,6 +148,10 @@ const { data: photos } = await useFetch<photo[]>(`https://picsum.photos/v2/list?
 setSeo();
 
 useHead({
+  title: info.value.title
+});
+
+useSeoMeta({
   title: info.value.title,
   ogTitle: info.value.title,
   description: info.value.body,
