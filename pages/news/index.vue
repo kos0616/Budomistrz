@@ -39,4 +39,5 @@ const breadcrumbs = ref([
 type info = { body: string; id: number; title: string; userId: number };
 
 const { data: list } = await useFetch<info[]>('https://jsonplaceholder.typicode.com/posts');
+useSeoMeta({ title: 'NEWS' });
 </script>

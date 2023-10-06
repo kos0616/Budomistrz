@@ -1,7 +1,7 @@
 <template>
   <div class="p-10">
-    <Breadcrumb v-model="breadcrumbs" class="mb-3" />
     <div class="container mx-auto">
+      <Breadcrumb v-model="breadcrumbs" class="mb-3" />
       <div v-if="error">
         <h1 class="mb-4">We got something wrong.</h1>
         <p class="mb-5">{{ error }}</p>

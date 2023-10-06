@@ -20,7 +20,7 @@
       <article
         v-for="(p, i) in list"
         :key="`project${i}`"
-        class="mb-5 flex flex-col items-center gap-5 bg-zinc-300/75 pl-10 dark:bg-zinc-800/75 md:flex-row portrait:pr-5 py-5 md:py-0"
+        class="mb-5 flex flex-col items-center gap-5 bg-zinc-300/75 py-5 pl-10 dark:bg-zinc-800/75 md:flex-row md:py-0 portrait:pr-5"
       >
         <div class="max-w-md shrink-0 md:py-16">
           <h2 class="mb-4">
@@ -66,7 +66,5 @@ const breadcrumbs = ref([
 const { data } = await useFetch('/api/projects/lists');
 const list = data.value?.list;
 
-definePageMeta({
-  breadcrumb: 'Products Gallery'
-});
+useSeoMeta({ title: 'PROJECTS' });
 </script>

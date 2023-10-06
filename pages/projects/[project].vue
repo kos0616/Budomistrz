@@ -1,12 +1,12 @@
 <template>
   <div class="bg-zinc-300/75 p-10 dark:bg-zinc-800/75">
-    <Breadcrumb v-model="breadcrumbs" class="mb-3" />
     <article
       v-skeleton="loading"
       itemscope
       itemtype="https://schema.org/CreativeWork"
       class="container mx-auto"
     >
+      <Breadcrumb v-model="breadcrumbs" class="mb-3" />
       <h1 v-skeleton-item itemprop="name" class="mb-4">
         {{ info?.title }}
       </h1>
@@ -31,7 +31,6 @@ const breadcrumbs = ref([
   { name: 'Home', value: '/' },
   { name: 'Projects', value: '/projects' }
 ]);
-const info = ref<typeInfo>({ description: ' ' } as any);
 
 const loading = ref(false);
 
@@ -50,23 +49,11 @@ const setSeo = () => {
   });
 };
 
-// const getArticle = async () => {
-//   const { data } = await useFetch(`https://jsonplaceholder.typicode.com/posts/${project}`);
-//   const res = data.value as any;
-//   info.value.description = res?.body;
-//   loading.value = false;
-// };
+const { data: info } = await useFetch<typeInfo>('/api/projects/info', {
+  query: { id: project }
+});
 
-const getInfo = async () => {
-  const { data: res } = await useFetch('/api/projects/info', {
-    query: { id: project }
-  });
-  if (res) {
-    info.value = res.value as any;
-  }
-};
-
-await getInfo();
 setSeo();
-// await getArticle();
+
+useSeoMeta({ title: info.value?.title });
 </script>
