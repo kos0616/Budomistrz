@@ -2,8 +2,17 @@
   <div class="p-10">
     <Breadcrumb v-model="breadcrumbs" class="mb-3" />
     <div class="container mx-auto">
+      <div v-if="error">
+        <h1 class="mb-4">We got something wrong.</h1>
+        <p class="mb-5">{{ error }}</p>
+
+        <NuxtLink to="/" title="Back home" class="border border-current px-2 py-1 text-primary-400">
+          Back to Home
+        </NuxtLink>
+      </div>
       <article
-        v-skeleton="loading"
+        v-else
+        v-skeleton="pending"
         itemscope
         itemtype="https://schema.org/Article"
         class="bg-zinc-300/75 p-5 dark:bg-zinc-800/75"
@@ -21,14 +30,14 @@
           <img
             src="http://placebeard.it/50/notag"
             itemprop="image"
-            :alt="`photo of ${author.name}`"
+            :alt="`photo of ${author?.name}`"
             class="rounded-full"
           />
           <div>
-            Author: <span itemprop="name">{{ author.name }}</span>
+            Author: <span itemprop="name">{{ author?.name }}</span>
             <a
               itemprop="email"
-              :href="`mailto:${author.email}`"
+              :href="`mailto:${author?.email}`"
               class="mx-2 inline-block fill-current align-middle"
             >
               <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
@@ -41,7 +50,7 @@
           </div>
         </div>
 
-        <figure v-if="photos[0].url" class="mb-10">
+        <figure v-if="photos && photos[0]?.url" class="mb-10">
           <img
             itemprop="image"
             height="450"
@@ -68,40 +77,11 @@
 
 <script lang="ts" setup>
 import { Breadcrumb } from '#components';
-const route = useRoute();
-const { id } = route.params;
 
 const breadcrumbs = ref([
   { name: 'Home', value: '/' },
   { name: 'News', value: '/news' }
 ]);
-const info = ref<{ body: string; id: number; title: string; userId: number } | {}>({});
-
-const author = ref<{
-  id: 1;
-  name: 'Leanne Graham';
-  username: 'Bret';
-  email: 'Sincere@april.biz';
-  address: {
-    street: 'Kulas Light';
-    suite: 'Apt. 556';
-    city: 'Gwenborough';
-    zipcode: '92998-3874';
-    geo: {
-      lat: '-37.3159';
-      lng: '81.1496';
-    };
-  };
-  phone: '1-770-736-8031 x56442';
-  website: 'hildegard.org';
-  company: {
-    name: 'Romaguera-Crona';
-    catchPhrase: 'Multi-layered client-server neural-net';
-    bs: 'harness real-time e-markets';
-  };
-}>({});
-
-const loading = ref(false);
 
 const setSeo = () => {
   useJsonld({
@@ -118,37 +98,24 @@ const setSeo = () => {
   });
 };
 
-const getInfo = async () => {
-  loading.value = true;
-  const { data } = await useFetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
-  info.value = data.value;
-  loading.value = false;
-};
+const id = useRoute().params.id;
 
-const getAuthor = async () => {
-  const { data } = await useFetch(
-    `https://jsonplaceholder.typicode.com/users/${info.value.userId}`
-  );
-  author.value = data.value;
-};
+const {
+  data: info,
+  pending,
+  error
+} = await useFetch<article>(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+  pick: ['userId', 'body', 'id', 'title']
+});
+const { data: author } = await useFetch<author>(
+  `https://jsonplaceholder.typicode.com/users/${info.value?.userId}`,
+  { pick: ['name', 'email'] }
+);
 
-const photos = ref<
-  {
-    albumId: 1;
-    id: 1;
-    title: 'accusamus beatae ad facilis cum similique qui sunt';
-    url: 'https://via.placeholder.com/600/92c952';
-    thumbnailUrl: 'https://via.placeholder.com/150/92c952';
-  }[]
->([]);
-
-const getPhotos = async () => {
-  const { data } = await useFetch(`https://jsonplaceholder.typicode.com/photos?albumId=${id}`);
-  photos.value = data.value;
-};
+const { data: photos } = await useFetch<photo[]>(
+  `https://jsonplaceholder.typicode.com/photos?albumId=${id}`,
+  { pick: [] }
+);
 
 setSeo();
-await getInfo();
-await getAuthor();
-await getPhotos();
 </script>
