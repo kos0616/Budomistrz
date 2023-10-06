@@ -17,7 +17,7 @@
         itemtype="https://schema.org/Article"
         class="bg-zinc-300/75 p-5 dark:bg-zinc-800/75"
       >
-        <h1 v-skeleton-item itemprop="name" class="mb-4">
+        <h1 v-skeleton-item itemprop="headline" class="mb-4">
           {{ info?.title }}
         </h1>
 
@@ -34,7 +34,10 @@
             class="rounded-full"
           />
           <div>
-            Author: <span itemprop="name">{{ author?.name }}</span>
+            Author:
+            <a itemprop="url" :href="`https://jsonplaceholder.typicode.com/users/${info?.userId}`">
+              <span itemprop="name">{{ author?.name }}</span>
+            </a>
             <a
               itemprop="email"
               :href="`mailto:${author?.email}`"
@@ -50,7 +53,7 @@
           </div>
         </div>
 
-        <figure v-if="photos && photos[0]?.url" class="mb-10">
+        <figure v-show="photos.length" class="mb-10">
           <img
             itemprop="image"
             height="450"
@@ -66,7 +69,7 @@
         <ol class="flex flex-wrap gap-2">
           <li v-for="(img, i) in photos" :key="`img_${i}`">
             <a :href="img.url" target="_blank">
-              <img itemprop="image" :src="img.thumbnailUrl" :alt="img.title" />
+              <img itemprop="image" loading="lazy" :src="img.thumbnailUrl" :alt="img.title" />
             </a>
           </li>
         </ol>
@@ -105,7 +108,8 @@ const {
   pending,
   error
 } = await useFetch<article>(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-  pick: ['userId', 'body', 'id', 'title']
+  pick: ['userId', 'body', 'id', 'title'],
+  default: () => ({}) as article
 });
 const { data: author } = await useFetch<author>(
   `https://jsonplaceholder.typicode.com/users/${info.value?.userId}`,
@@ -114,7 +118,7 @@ const { data: author } = await useFetch<author>(
 
 const { data: photos } = await useFetch<photo[]>(
   `https://jsonplaceholder.typicode.com/photos?albumId=${id}`,
-  { pick: [] }
+  { default: () => [] }
 );
 
 setSeo();
