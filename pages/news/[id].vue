@@ -28,10 +28,12 @@
           class="flex items-center gap-2 py-2"
         >
           <img
-            src="http://placebeard.it/50/notag"
+            src="https://api.lorem.space/image/face?w=100"
             itemprop="image"
             :alt="`photo of ${author?.name}`"
-            class="rounded-full"
+            width="50"
+            height="50"
+            class="rounded-full aspect-square object-cover"
           />
           <div>
             Author:
@@ -58,18 +60,25 @@
             itemprop="image"
             height="450"
             width="450"
-            :src="photos[0].url"
+            :src="photos[0].download_url"
             class="aspect-video object-cover"
+            alt="image of news"
           />
-          <figcaption>{{ photos[0].title }}</figcaption>
         </figure>
 
         <p v-skeleton-item itemprop="articleBody" class="mb-16">{{ info?.body }}</p>
 
         <ol class="flex flex-wrap gap-2">
           <li v-for="(img, i) in photos" :key="`img_${i}`">
-            <a :href="img.url" target="_blank">
-              <img itemprop="image" loading="lazy" :src="img.thumbnailUrl" :alt="img.title" />
+            <a :href="img.download_url" target="_blank">
+              <img
+                itemprop="image"
+                loading="lazy"
+                width="200"
+                height="200"
+                :src="img.download_url"
+                :alt="`photo by ${img.author}`"
+              />
             </a>
           </li>
         </ol>
@@ -87,18 +96,34 @@ const breadcrumbs = ref([
 ]);
 
 const setSeo = () => {
-  useJsonld({
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'news',
-        item: 'https://kos0616.github.io/Budomistrz/news'
+  useJsonld([
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'news',
+          item: 'https://kos0616.github.io/Budomistrz/news'
+        }
+      ]
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: info.value.title,
+      articleBody: info.value.body,
+      image: (photos.value || []).map((o) => o.download_url),
+      author: {
+        '@type': 'Person',
+        name: author.value?.name,
+        url: `https://jsonplaceholder.typicode.com/users/${info.value?.userId}`,
+        email: `mailto:${author.value?.email}`,
+        image: 'http://placebeard.it/50/notag'
       }
-    ]
-  });
+    }
+  ]);
 };
 
 const id = useRoute().params.id;
@@ -116,10 +141,17 @@ const { data: author } = await useFetch<author>(
   { pick: ['name', 'email'] }
 );
 
-const { data: photos } = await useFetch<photo[]>(
-  `https://jsonplaceholder.typicode.com/photos?albumId=${id}`,
-  { default: () => [] }
-);
+const { data: photos } = await useFetch<photo[]>(`https://picsum.photos/v2/list?limit=5`, {
+  default: () => []
+});
 
 setSeo();
+
+useHead({
+  title: info.value.title,
+  ogTitle: info.value.title,
+  description: info.value.body,
+  ogDescription: info.value.body,
+  ogImage: photos.value[0].download_url || undefined
+});
 </script>

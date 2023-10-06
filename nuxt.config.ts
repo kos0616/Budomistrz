@@ -51,7 +51,7 @@ export default defineNuxtConfig({
       },
       title: 'Budomistrz',
       meta: [
-        { name: 'description', content: 'Budomistrz a starter sample' },
+        { name: 'description', content: 'Eco-Friendly Design, Sustainable Construction, Making Dreams Come True' },
         { name: 'author', content: 'kos0616' },
         { name: 'copyright', content: 'Budomistrz' },
         { name: 'og:title', content: 'Budomistrz' },

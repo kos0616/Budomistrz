@@ -1,4 +1,3 @@
-
 type article = { body: string; id: number; title: string; userId: number };
 
 type author = {
@@ -26,9 +25,10 @@ type author = {
 };
 
 type photo = {
-  albumId: 1;
-  id: 1;
-  title: 'accusamus beatae ad facilis cum similique qui sunt';
-  url: 'https://via.placeholder.com/600/92c952';
-  thumbnailUrl: 'https://via.placeholder.com/150/92c952';
+  id: '0';
+  author: 'Alejandro Escamilla';
+  width: 5000;
+  height: 3333;
+  url: 'https://unsplash.com/photos/yC-Yzbqy7PY';
+  download_url: 'https://picsum.photos/id/0/5000/3333';
 };
