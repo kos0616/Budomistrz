@@ -42,8 +42,8 @@
         <NuxtLink @click="isOpen = false" class="home-nav-link px-3 md:hidden" to="/">
           Home
         </NuxtLink>
-        <NuxtLink @click="isOpen = false" class="home-nav-link px-3" to="news"> News </NuxtLink>
-        <NuxtLink @click="isOpen = false" class="home-nav-link px-3" to="projects">
+        <NuxtLink @click="isOpen = false" class="home-nav-link px-3" to="/news"> News </NuxtLink>
+        <NuxtLink @click="isOpen = false" class="home-nav-link px-3" to="/projects">
           Projects
         </NuxtLink>
         <div class="home-nav-link px-3">
