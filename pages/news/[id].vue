@@ -67,6 +67,7 @@
         </figure>
 
         <p v-skeleton-item itemprop="articleBody" class="mb-16">{{ info?.body }}</p>
+        <p>{{ gpt3 }}</p>
 
         <ol class="flex flex-wrap gap-2">
           <li v-for="(img, i) in photos" :key="`img_${i}`">
@@ -140,6 +141,8 @@ const { data: author } = await useFetch<author>(
   `https://jsonplaceholder.typicode.com/users/${info.value?.userId}`,
   { pick: ['name', 'email'] }
 );
+
+const { data: gpt3 } = await useFetch<string>('https://api.val.town/v1/run/kos0616.gpt3Example');
 
 const { data: photos } = await useFetch<photo[]>(`https://picsum.photos/v2/list?limit=5`, {
   default: () => []
