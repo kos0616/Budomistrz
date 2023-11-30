@@ -5,8 +5,9 @@ const date = new Date().toLocaleTimeString();
 
 // const path = require('path');
 
-const isProduction = process.env.NODE_ENV === 'production';
-const BASE_URL = isProduction ? '/Budomistrz/' : '/';
+// const isProduction = process.env.NODE_ENV === 'production';
+// const BASE_URL = isProduction ? '/Budomistrz/' : '/';
+const BASE_URL = '/';
 const BRAND_NAME = 'Budomistrz';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -19,12 +20,12 @@ export default defineNuxtConfig({
       BRAND_NAME
     }
   },
-  nitro: {
-    preset: 'github-pages'
+  // nitro: {
+    // preset: 'github-pages'
     // output: {
     //   publicDir: path.join(__dirname, 'docs')
     // }
-  },
+  // },
   css: ['@/assets/css/tailwind.scss'],
   modules: [
     '@nuxtjs/tailwindcss',
