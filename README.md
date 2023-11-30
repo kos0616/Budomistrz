@@ -2,7 +2,8 @@
 
 demo site of a construction company
 
-[demo site](https://kos0616.github.io/Budomistrz/)
+[SSG demo site](https://kos0616.github.io/Budomistrz/)
+[SSR demo site](https://budomistrz.pages.dev/)
 
 with [NUXTJS](https://nuxt.com/) and basic SEO setting
 
