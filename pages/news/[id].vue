@@ -142,9 +142,9 @@ const { data: author } = await useFetch<author>(
   { pick: ['name', 'email'] }
 );
 
-const { data: gpt3 } = await useFetch<string>('https://api.val.town/v1/run/kos0616.gpt3Example');
+const { data: gpt3 } = useFetch<string>('https://api.val.town/v1/run/kos0616.gpt3Example');
 
-const { data: photos } = await useFetch<photo[]>(`https://picsum.photos/v2/list?limit=5`, {
+const { data: photos } = useFetch<photo[]>(`https://picsum.photos/v2/list?limit=5`, {
   default: () => []
 });
 
