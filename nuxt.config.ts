@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       clientVersion: pkg.version,
-      BASE_URL,
+      // BASE_URL,
       BRAND_NAME
     }
   },
@@ -42,7 +42,7 @@ export default defineNuxtConfig({
     { src: '~/plugins/skeleton', ssr: false }
   ],
   app: {
-    baseURL: BASE_URL,
+    // baseURL: BASE_URL,
     // buildAssetsDir: 'assets', // 這邊會影響到預設的 assets資料夾
     head: {
       htmlAttrs: {
